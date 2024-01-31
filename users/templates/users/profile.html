@@ -18,6 +18,11 @@
                                 {{ u_form|crispy }}
                                 {{ p_form|crispy }}
                         </fieldset>
+                        <small class="text-muted">
+                                Reset Password: <a href="{% url 'password_reset' %}">Change password</a>
+                                <br>
+                                Switch Account: <a href="{% url 'logout' %}">Logout</a>
+                        </small>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-outline-info">Update!</button>
                         </div>

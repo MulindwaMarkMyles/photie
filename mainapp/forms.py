@@ -1,7 +1,8 @@
 from django import forms
 from .models import Post
 
-class ImageForm(forms.ModelForm):
+#not using it.
+class FileForm(forms.ModelForm):
         class Meta:
                 model = Post
                 fields = ["context", "post"]

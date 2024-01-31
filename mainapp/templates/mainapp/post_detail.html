@@ -2,7 +2,11 @@
 {% block content %}
         <article class="media container">
                 <div class="media-body post-b">
+                        {% if object.file_type == "image" %}
                         <img class="post-img" src="{{ object.post.url }}" alt="">
+                        {% else %}
+                        <video class="post-img" src="{{ object.post.url }}" controls></video>
+                        {% endif %}
                         <div class="items">
                                 <h3 class="account-heading">{{ object.context }}</h3>
                                 <div class="article-metadata">

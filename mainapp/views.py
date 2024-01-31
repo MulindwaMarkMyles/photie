@@ -1,5 +1,4 @@
 from django.shortcuts import render, reverse
-from .forms import ImageForm
 from .models import Post
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin

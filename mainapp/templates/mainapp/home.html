@@ -10,7 +10,11 @@
                 <div class="gallery">
                         {% for post in posts %}
                         <a class="img" href="{% url 'post-detail' post.id %}">
+                                {% if post.file_type == "image" %}
                                 <img src="{{ post.post.url }}" alt="">
+                                {% else %}
+                                <video src="{{ post.post.url }}"  controls muted autoplay></video>
+                                {% endif %}
                                 <div class="writings">
                                         {% if post.context %}
                                         <span>{{ post.context }}</span>
