@@ -1,0 +1,14 @@
+{% extends "mainapp/base.html" %}
+{% block content %}
+        <article class="media container">
+                <div class="media-body post-b">
+                        <img class="post-img" src="{{ object.post.url }}" alt="">
+                        <div class="items">
+                                <h3 class="account-heading">{{ object.context }}</h3>
+                                <div class="article-metadata">
+                                        <p class="text-secondary">{{ object.date_posted|date:"F d, Y" }}</p>
+                                </div>
+                        </div>
+                </div>
+        </article>
+{% endblock %}

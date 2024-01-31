@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PHOTIE</title>
+        <link rel="stylesheet" href="{% static 'mainapp/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/home.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/profile.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/post-detail.css' %}">
+</head>
+<body>
+        {% if messages %}
+                {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+        {% endif %}
+      <div class="container-">
+        {% block content %}
+        {% endblock %}
+      </div>  
+</body>
+</html>

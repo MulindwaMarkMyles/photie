@@ -1,0 +1,27 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+        <div class="main">
+                <legend class="block border-bottom mb-8 mt-4 ms-4 ">
+                        {{ the_author }} posts
+                        <div class="img-cont">
+                                <a href="{% url 'profile' %}"><img class="small-img" src="{{ the_dp }}" alt=""></a>
+                        </div>
+                </legend>
+                <div class="gallery">
+                        {% for post in posts %}
+                        <a class="img" href="{% url 'post-detail' post.id %}">
+                                <img src="{{ post.post.url }}" alt="">
+                                <div class="writings">
+                                        {% if post.context %}
+                                        <span>{{ post.context }}</span>
+                                        {% endif %}
+                                        <span>{{ post.date_posted|date:"F d, Y" }}</span>
+                                </div>
+                        </a>
+                        {% endfor %}
+                </div>
+                <div class="add-posts">
+                        <a class="add-posts-button" href="{% url 'upload_post' %}"><button type="button">UPLOAD</button></a>
+                </div>
+        </div>
+{% endblock %}
