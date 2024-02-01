@@ -2,6 +2,9 @@ migrations/
 users/__pycache__/
 mainapp/__pycache__/
 photo_album/__pycache__/
+mainapp/migrations/
+users/migrations/
+photo_album/migrations/
 media/
 images/
 *.sqlite3
