@@ -1,14 +1,16 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
         <div class="main">
-                <legend class="block border-bottom mb-8 mt-4 ms-4 ">
-                        {{ the_author }} posts
-                        {% if the_dp %}
-                        <div class="img-cont">
-                                <a href="{% url 'profile' %}"><img class="small-img" src="{{ the_dp }}" alt=""></a>
-                        </div>
-                        {% endif %}
-                </legend>
+                <div class="block">
+                        <legend class="border-bottom mb-8 mt-4 ms-4 ">
+                                {{ the_author }} posts
+                                {% if the_dp %}
+                                <div class="img-cont mt-2">
+                                        <a href="{% url 'profile' %}"><img class="small-img" src="{{ the_dp }}" alt=""></a>
+                                </div>
+                                {% endif %}
+                        </legend>
+                </div>
                 <div class="gallery">
                         {% for post in posts %}
                         {% if the_dp %}
