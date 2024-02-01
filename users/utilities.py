@@ -15,7 +15,7 @@ def send_message(first_name, last_name, receipient_email, access_token,name):
         body = f"""Hey {name},
 {last_name} {first_name} has invited you to share their lovely moments with you on 'PHOTIE' an online photo gallery, please use your email and the access_token below to access them.
                         {access_token}
-Please visit:
+Please visit: <the link to the website>
 
 PHOTIE TEAM🎊\n
         """
