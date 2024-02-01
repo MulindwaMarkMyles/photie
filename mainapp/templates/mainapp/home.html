@@ -24,8 +24,10 @@
                         </a>
                         {% endfor %}
                 </div>
+                {% if the_dp %}
                 <div class="add-posts">
                         <a class="add-posts-button" href="{% url 'upload_post' %}"><button type="button">UPLOAD</button></a>
                 </div>
+                {% endif %}
         </div>
 {% endblock %}

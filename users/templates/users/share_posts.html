@@ -1,0 +1,25 @@
+{% extends "mainapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <div class="container">
+                <form method="POST" class="mb-4" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group mb-4">
+                                <legend class="border-bottom mb-4">
+                                        SHARE POSTS
+                                </legend>
+                                <ul>
+                                        <li>Please note that this person will have indefinite access to your posts unless revoked.</li>
+                                        <li>Your username is required to be able to access your posts.</li>
+                                        <li>A default access token is generated for you but you can edit it as desired.</li>
+                                        <li>The email you submit is sent this access token and they can login using their email and the access token.</li>
+                                        <li>The name field is for the name of the person your sending to.</li>
+                                </ul>
+                                {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                                <button type="submit" class="btn btn-outline-info">Send Access token!</button>
+                        </div>
+                </form>
+        </div>
+{% endblock %}
