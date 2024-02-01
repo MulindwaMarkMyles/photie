@@ -1,0 +1,22 @@
+{% extends "mainapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <div class="container">
+                <form method="GET" class="mb-4">
+                        {% csrf_token %}
+                        <fieldset class="form-group mb-4">
+                                <legend class="border-bottom mb-4">
+                                        FOLLOWERS
+                                </legend>
+                                {% for follower in followers %} 
+                                <ul>
+                                        <li>
+                                                <h3><a href="{% url 'follower-info' follower.id %}">{{ follower.name }}</a></h3>
+                                                <p>{{ follower.email }}</p>
+                                        </li>
+                                </ul>
+                                {% endfor %}
+                        </fieldset>
+                </form>
+        </div>
+{% endblock %}

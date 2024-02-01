@@ -12,8 +12,12 @@ def send_message(first_name, last_name, receipient_email, access_token,name):
         message['To'] = receipient_email
         message['Subject']  = "Invitation to Share History and Love."
         
-        body = f"""Hey {name},\n{last_name} {first_name} has invited you to share her lovely moments with her on\n'PHOTIE' an online photo gallery, please use your email and the access_token below to access them.\n\n\t\t {access_token}\n\n
-        PHOTIE TEAM🎊\n
+        body = f"""Hey {name},
+{last_name} {first_name} has invited you to share their lovely moments with you on 'PHOTIE' an online photo gallery, please use your email and the access_token below to access them.
+                        {access_token}
+Please visit:
+
+PHOTIE TEAM🎊\n
         """
         message.attach(MIMEText(body, "plain"))
         

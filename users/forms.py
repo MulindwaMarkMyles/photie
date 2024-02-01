@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .models import Profile, AccessLink
 from django.contrib.auth.forms import UserCreationForm
 
+
 class UserRegisterForm(UserCreationForm):
         email = forms.EmailField(required=True)
         first_name = forms.CharField(required=True)
@@ -26,6 +27,19 @@ class ProfileUpdateForm(forms.ModelForm):
                 fields = ["image"]
                 
 class SharePostsForm(forms.ModelForm):
+        username = forms.CharField(widget=forms.TextInput(attrs={"readonly":"readonly"}))
         class Meta:
                 model = AccessLink
                 fields = ["username", "name", "email", "access_token"]
+                
+class AccessLinkLoginForm(forms.Form):
+        email = forms.EmailField(required=True)
+        access_token = forms.UUIDField(required=True)
+
+                
+                
+                
+                
+                
+        
+                

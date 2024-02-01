@@ -10,6 +10,11 @@
                                 </legend>
                                 {{ form|crispy }}
                         </fieldset>
+                        <div class="mt-4 mb-4">
+                                <small class="text-muted">
+                                        Login using access token instead: <a href="{% url 'login_using_access_token' %}">Access token</a>
+                                </small>
+                        </div>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-outline-info">LOGIN!</button>
                                 <small class="text-muted ms-4">

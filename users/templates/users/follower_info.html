@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+        <div class="container">
+                <form class="mb-4">
+                        {% csrf_token %}
+                        <fieldset class="form-group mb-4">
+                                <legend class="border-bottom mb-4">
+                                        {{ access_link.name }} details
+                                </legend>
+                                <h3>Email: {{ access_link.email }}</h3>
+                                <p>Access_token: {{ access_link.access_token }}</p>
+                        </fieldset>
+                        <div class="form-group">
+                                <a href="{% url 'access-link-delete' access_link.id %}"><button type="button" class="btn btn-outline-danger">REVOKE</button></a>
+                        </div>
+                </form>
+        </div>
+{% endblock %}

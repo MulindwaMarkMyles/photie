@@ -3,12 +3,15 @@
         <div class="main">
                 <legend class="block border-bottom mb-8 mt-4 ms-4 ">
                         {{ the_author }} posts
+                        {% if the_dp %}
                         <div class="img-cont">
                                 <a href="{% url 'profile' %}"><img class="small-img" src="{{ the_dp }}" alt=""></a>
                         </div>
+                        {% endif %}
                 </legend>
                 <div class="gallery">
                         {% for post in posts %}
+                        {% if the_dp %}
                         <a class="img" href="{% url 'post-detail' post.id %}">
                                 {% if post.file_type == "image" %}
                                 <img src="{{ post.post.url }}" alt="">
@@ -22,6 +25,21 @@
                                         <span>{{ post.date_posted|date:"F d, Y" }}</span>
                                 </div>
                         </a>
+                        {% else %}
+                        <a class="img" href="{% url 'post-detail-user' post.id %}">
+                                {% if post.file_type == "image" %}
+                                <img src="{{ post.post.url }}" alt="">
+                                {% else %}
+                                <video src="{{ post.post.url }}"  controls muted autoplay></video>
+                                {% endif %}
+                                <div class="writings">
+                                        {% if post.context %}
+                                        <span>{{ post.context }}</span>
+                                        {% endif %}
+                                        <span>{{ post.date_posted|date:"F d, Y" }}</span>
+                                </div>
+                        </a>
+                        {% endif %}
                         {% endfor %}
                 </div>
                 {% if the_dp %}

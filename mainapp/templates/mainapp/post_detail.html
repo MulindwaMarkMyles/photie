@@ -15,4 +15,8 @@
                         </div>
                 </div>
         </article>
+        <div class="right me-4">
+                <a href="{% url 'post-update' post.id %}"><button type="button" class="btn btn-outline-info">UPDATE</button></a>
+                <a href="{% url 'post-delete' post.id %}" class="ms-2"><button type="button" class="btn btn-outline-danger">DELETE</button></a>
+        </div>
 {% endblock %}

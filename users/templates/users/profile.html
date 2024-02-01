@@ -19,12 +19,13 @@
                                 {{ p_form|crispy }}
                         </fieldset>
                         <small class="text-muted">
-                                Reset Password: <a href="{% url 'password_reset' %}">Change password</a>
-                                <br>
-                                Switch Account: <a href="{% url 'logout' %}">Logout</a>
+                                Share access to your gallery: <a href="{% url 'share_posts' %}">Share</a>
                         </small>
-                        <div class="form-group">
-                                <button type="submit" class="btn btn-outline-info">Update!</button>
+                        <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-outline-success">UPDATE</button>
+                                <a href="{% url 'logout' %}"><button type="button" class="btn btn-warning">LOGOUT</button></a>
+                                <a href="{% url 'password_reset' %}"><button type="button" class="btn btn-outline-secondary">CHANGE PASSWORD</button></a>
+                                <a href="{% url 'view-permitted-users' %}"><button type="button" class="btn btn-outline-secondary">FOLLOWERS</button></a>
                         </div>
                 </form>
         </div>

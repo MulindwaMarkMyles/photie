@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 
-# from mainapp.models import Post
-
 class Profile(models.Model):
         user = models.OneToOneField(User, on_delete=models.CASCADE)
         image = models.ImageField(default="default.png", upload_to="profile_pics")
@@ -22,9 +20,10 @@ class Profile(models.Model):
                         
 class AccessLink(models.Model):
         access_token = models.UUIDField(blank=False,editable=True)
-        username = models.CharField(editable=True,blank=False,max_length=50,default="username")
-        email = models.CharField(max_length=100,blank=False,default="email")
-        name = models.CharField(blank=False,max_length=100,default="name")
+        username = models.CharField(blank=False,max_length=50,default="username")
+        email = models.EmailField(max_length=100,blank=False,unique=True)
+        name = models.CharField(blank=False,max_length=100)
         created_at = models.DateTimeField(auto_now_add=True)
+        
         
         

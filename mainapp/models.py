@@ -25,8 +25,8 @@ class Post(models.Model):
                 return reverse('home_page')
         
         def save(self, *args, **kwargs):
-                if not self.pk:  
-                        file_extension = self.post.name.split('.')[-1].lower()
+                # if not self.pk: can be used to prevent editing if  not in the creation instance
+                file_extension = self.post.name.split('.')[-1].lower()
                 if file_extension in ["jpg", "jpeg", "png"]:
                         self.file_type = 'image'
                 elif file_extension in ["gif", "mp4", "avi", "mkv"]:
