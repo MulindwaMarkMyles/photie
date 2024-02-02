@@ -2,7 +2,7 @@
 {% block content %}
         <div class="main">
                 <div class="block">
-                        <legend class="border-bottom mb-8 mt-4 ms-4 ">
+                        <legend class="border-bottom ps-4 pe-4 pt-4">
                                 {{ the_author }} posts
                                 {% if the_dp %}
                                 <div class="img-cont mt-2">
@@ -18,7 +18,7 @@
                                 {% if post.file_type == "image" %}
                                 <img src="{{ post.post.url }}" alt="">
                                 {% else %}
-                                <video src="{{ post.post.url }}"  controls muted autoplay></video>
+                                <video src="{{ post.post.url }}" muted autoplay></video>
                                 {% endif %}
                                 <div class="writings">
                                         {% if post.context %}
